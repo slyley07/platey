@@ -15,7 +15,7 @@ function getWeight() {
   checked_plates = [];
   b = 0;
 
-  output.innerHTML = '<p><span id="plated_0"></span><span class="bar"></span> <span id="plated_1"></span></p>';
+  output.innerHTML = '<p><span id="plated_0"></span><span id="bar"></span> <span id="plated_1"></span></p>';
 
   document.getElementById('plated_0').innerHTML = '';
   document.getElementById('plated_1').innerHTML = '';
@@ -32,13 +32,17 @@ function getWeight() {
   var weight = document.getElementById('weight').value;
   var bar_weight = document.getElementById('barbell').value;
 
-  weight = weight - bar_weight;
+  var new_weight = weight - bar_weight;
 
-  weight = weight / 2;
-  if (weight > 0) {
-    calc(weight);
-  } else if (weight === 0) {
+  new_weight = new_weight / 2;
 
+  // console.log((new_weight * 2)+ bar_weight);
+  if (new_weight > 0 && weight <= 1268 ) {
+    calc(new_weight);
+  } else if (weight > 1268) {
+    output.innerHTML = '<p class="error">Chill out dude.</p>'
+    output.style.display = 'block';
+  } else if (new_weight === 0) {
     output.innerHTML = '<p class="error">Just use the bar</p>'
     output.style.display = 'block';
   } else {
@@ -65,17 +69,20 @@ function calc(target_weight) {
       calc(target_weight);
       return;
     }
+  } else if (target_weight > 0 && target_weight < 5) {
+      if (!checked_plates.includes(2.5)) {
+        output.innerHTML = '<p class="error">Cannot plate</p>'
+        output.style.display = 'block';
+        return;
+      } else if (checked_plates.includes(2.5) && target_weight !== 2.5) {
+        output.innerHTML = '<p class="error">Cannot plate</p>'
+        output.style.display = 'block';
+        return;
+      }
   } else if (target_weight > 0) {
-    if (!checked_plates.includes(2.5) && target_weight % 1 > 0) {
-      output.innerHTML = '<p class="error">Cannot plate</p>'
-      output.style.display = 'block';
-
-      return;
-    } else {
-      b++;
-      calc(target_weight);
-      return;
-    }
+    b++;
+    calc(target_weight);
+    return;
   } else {
     for (var w = 0; w < plates.length; w++) {
       var klass = document.getElementById(plates[w] + "").dataset.num;
@@ -90,11 +97,12 @@ function calc(target_weight) {
       document.getElementById('plated_0').innerHTML += '<span class="sing_plate ' + klass + '">' + plates[t] + '</span>';
     }
 
+    document.getElementById('bar').innerHTML = document.getElementById('barbell').value;
+
     output.style.display = 'block';
 
-    console.log("plates: " + plates);
+    // console.log("plates: " + plates);
   }
-  console.log(b);
 }
 
 document.getElementById('calc').addEventListener('click', getWeight);
