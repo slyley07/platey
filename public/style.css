@@ -183,3 +183,72 @@
   color: #FFFFFF;
   font-size: 18px;
 }
+
+
+
+@media screen and (orientation: portrait) and (max-width: 480px) {
+  /*h1 {
+    font-size: 60px;
+  }
+
+  h3 {
+    font-size: 40px;
+  }
+
+  .weights .chex p {
+    font-size: 36px;
+  }
+
+  .weights .chex .roundedOne {
+    width: 48px;
+    height: 48px;
+  }
+
+  .weights .chex .roundedOne label {
+    width: 40px;
+    height: 40px;
+  }
+
+  .weights .chex .roundedOne label::after {
+    width: 36px;
+    height: 36px;
+  }*/
+
+  #output {
+    margin: 0 10px;
+  }
+
+  .sing_plate {
+    font-size: 10px;
+    margin: 0 1px;
+  }
+
+  .two {
+    padding: 5px 1px;
+  }
+
+  .five {
+    padding: 10px 2px;
+  }
+
+  .ten {
+    padding: 15px 2px;
+  }
+
+  .twenty_five {
+    padding: 25px 2px;
+  }
+
+  .thirty_five {
+    padding: 35px 5px;
+  }
+
+  .forty_five {
+    padding: 45px 5px;
+  }
+
+  .fifty_five {
+    padding: 55px 5px;
+  }
+
+}
