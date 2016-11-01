@@ -107,3 +107,10 @@ function calc(target_weight) {
 }
 
 document.getElementById('calc').addEventListener('click', getWeight);
+
+
+document.getElementById('reset').addEventListener('click', function() {
+  document.getElementById('weight').value = null;
+  document.getElementById('barbell').value = null;
+  document.getElementById('output').style.display = 'none';
+})
