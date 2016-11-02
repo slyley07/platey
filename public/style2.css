@@ -7,20 +7,28 @@
 
 .container h1,
 .container h3,
-.container .weights,
+.container #weights,
 .container .inputs,
 .container #output {
   text-align: center; }
 .container h1 {
   text-align: center;
   margin: 30px 0 0; }
-.container .weights {
-  display: flex;
+.container .lb_or_kg select {
+  border: 1px solid black;
+  border-radius: 0;
+  width: 75px;
+  height: 30px;
+  margin: 30px auto;
+  display: block;
+  background-color: #FFFFFF; }
+.container #weights {
   flex-wrap: wrap;
+  display: none;
   width: 180px;
   margin: 50px auto;
   justify-content: space-around; }
-  .container .weights .roundedOne {
+  .container #weights .roundedOne {
     width: 28px;
     height: 28px;
     position: relative;
@@ -30,7 +38,7 @@
     background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
     border-radius: 50px;
     box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5); }
-    .container .weights .roundedOne label {
+    .container #weights .roundedOne label {
       width: 20px;
       height: 20px;
       cursor: pointer;
@@ -41,7 +49,7 @@
       background: linear-gradient(to bottom, #222222 0%, #45484d 100%);
       border-radius: 50px;
       box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white; }
-      .container .weights .roundedOne label:after {
+      .container #weights .roundedOne label:after {
         content: '';
         width: 16px;
         height: 16px;
@@ -54,13 +62,13 @@
         opacity: 0;
         border-radius: 50px;
         box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5); }
-      .container .weights .roundedOne label:hover::after {
+      .container #weights .roundedOne label:hover::after {
         opacity: 0.3; }
-    .container .weights .roundedOne input[type=checkbox] {
+    .container #weights .roundedOne input[type=checkbox] {
       visibility: hidden; }
-    .container .weights .roundedOne input[type=checkbox]:checked + label:after {
+    .container #weights .roundedOne input[type=checkbox]:checked + label:after {
       opacity: 1; }
-  .container .weights .chex {
+  .container #weights .chex {
     margin: 10px 5px; }
 .container .inputs {
   margin: 0 0 100px; }
@@ -97,34 +105,44 @@
       color: #FF0000;
       text-align: center; }
     .container #output p .sing_plate {
-      font-size: 16px;
-      margin: 0 2px;
-      /*border: 1px solid #FFFFFF;*/
       background-color: #000000;
       color: #FFFFFF; }
-      .container #output p .sing_plate.two {
-        padding: 15px 3px; }
-      .container #output p .sing_plate.five {
-        padding: 20px 5px; }
-      .container #output p .sing_plate.ten {
-        padding: 25px 5px; }
-      .container #output p .sing_plate.twenty_five {
-        padding: 35px 5px; }
-      .container #output p .sing_plate.thirty_five {
-        padding: 45px 10px; }
-      .container #output p .sing_plate.forty_five {
-        padding: 55px 10px; }
-      .container #output p .sing_plate.fifty_five {
-        padding: 65px 15px; }
     .container #output p #bar {
       width: 240px;
-      height: 20px;
-      border: 1px solid #A9A9A9;
       background-color: #A9A9A9;
-      color: #FFFFFF;
-      font-size: 18px; }
+      color: #FFFFFF; }
 
-@media screen and (orientation: portrait) and (max-width: 480px) {
+@media screen and (min-width: 480px) {
+  .sing_plate {
+    font-size: 16px;
+    margin: 0 2px; }
+    .sing_plate.one {
+      padding: 10px 3px; }
+    .sing_plate.two {
+      padding: 15px 3px; }
+    .sing_plate.two_five {
+      padding: 15px 3px; }
+    .sing_plate.five {
+      padding: 20px 5px; }
+    .sing_plate.ten {
+      padding: 25px 5px; }
+    .sing_plate.fifteen {
+      padding: 25px 5px; }
+    .sing_plate.twenty {
+      padding: 30px 5px; }
+    .sing_plate.twenty_five {
+      padding: 35px 5px; }
+    .sing_plate.thirty_five {
+      padding: 45px 10px; }
+    .sing_plate.forty_five {
+      padding: 55px 10px; }
+    .sing_plate.fifty_five {
+      padding: 65px 15px; }
+
+  #bar {
+    font-size: 18px;
+    height: 20px; } }
+@media screen and (orientation: portrait) and (max-width: 479px) {
   /*h1 {
     font-size: 60px;
   }
@@ -133,50 +151,66 @@
     font-size: 40px;
   }
 
-  .weights .chex p {
+  #weights .chex p {
     font-size: 36px;
   }
 
-  .weights .chex .roundedOne {
+  #weights .chex .roundedOne {
     width: 48px;
     height: 48px;
   }
 
-  .weights .chex .roundedOne label {
+  #weights .chex .roundedOne label {
     width: 40px;
     height: 40px;
   }
 
-  .weights .chex .roundedOne label::after {
+  #weights .chex .roundedOne label::after {
     width: 36px;
     height: 36px;
   }*/
+  .lb_or_kg select {
+    border: 1px solid black;
+    border-radius: 0;
+    width: 85px;
+    height: 50px;
+    margin: 30px auto;
+    display: block;
+    background-color: #FFFFFF;
+    font-size: 20px;
+    padding: 4px; }
+
   #output {
-    margin: 0 10px; }
-
-  .sing_plate {
-    font-size: 10px;
-    margin: 0 1px; }
-
-  .two {
-    padding: 5px 1px; }
-
-  .five {
-    padding: 10px 2px; }
-
-  .ten {
-    padding: 15px 2px; }
-
-  .twenty_five {
-    padding: 25px 2px; }
-
-  .thirty_five {
-    padding: 35px 5px; }
-
-  .forty_five {
-    padding: 45px 5px; }
-
-  .fifty_five {
-    padding: 55px 5px; } }
+    margin: 0 10px;
+    height: 100px; }
+    #output .sing_plate {
+      font-size: 10px;
+      margin: 0 1px; }
+      #output .sing_plate.one {
+        padding: 5px 1px; }
+      #output .sing_plate.two {
+        padding: 5px 1px; }
+      #output .sing_plate.two_five {
+        padding: 5px 1px; }
+      #output .sing_plate.five {
+        padding: 10px 2px; }
+      #output .sing_plate.ten {
+        padding: 15px 2px; }
+      #output .sing_plate.fifteen {
+        padding: 20px 2px; }
+      #output .sing_plate.twenty {
+        padding: 20px 2px; }
+      #output .sing_plate.twenty_five {
+        padding: 25px 2px; }
+      #output .sing_plate.thirty_five {
+        padding: 35px 5px; }
+      #output .sing_plate.forty_five {
+        padding: 45px 5px; }
+      #output .sing_plate.fifty_five {
+        padding: 55px 5px; }
+    #output #bar {
+      font-size: 10px;
+      height: 12px;
+      padding: 4px; } }
 
 /*# sourceMappingURL=style2.css.map */
