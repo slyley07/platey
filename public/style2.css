@@ -24,7 +24,8 @@
   background-image: url("img/caret-bottom.svg");
   background-repeat: no-repeat;
   background-position: 90% center;
-  background-size: 12px; }
+  background-size: 12px;
+  padding: 7px; }
 .container #weights {
   flex-wrap: wrap;
   display: none;
@@ -119,8 +120,7 @@
   .lb_or_kg select {
     width: 78px;
     height: 33px;
-    font-size: 16px;
-    padding: 7px; }
+    font-size: 16px; }
 
   #output {
     height: 150px; }
@@ -182,8 +182,7 @@
   .lb_or_kg select {
     width: 85px;
     height: 50px;
-    font-size: 20px;
-    padding: 4px; }
+    font-size: 20px; }
 
   #output {
     margin: 0 10px;
