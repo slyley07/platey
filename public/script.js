@@ -59,7 +59,6 @@ function make_chex(arr) {
     chex_div.appendChild(round_div);
     parent.appendChild(chex_div);
   }
-
 }
 
 function lb_or_kg() {
